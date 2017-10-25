@@ -4,6 +4,10 @@ from os.path import join
 from unlzw import unlzw
 
 
+def test_decode_small():
+    assert unlzw(b'\x1f\x9d\x90f\xde\xbc\x11\x13FN\xc0\x81\x05\x0f\x124(p\xa1\xc2\x82') == b'foobarfoobarfoobarfoobarfoobar'
+
+
 def test_decode():
     assert unlzw(open(join(dirname(__file__), 'lipsum.txt.Z'), 'rb').read()) == b'''
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at
