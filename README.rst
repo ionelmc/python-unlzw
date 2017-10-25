@@ -63,7 +63,9 @@ Overview
 
 .. end-badges
 
-Bindings for Mark Adler's unlzw library.
+Bindings for Mark Adler's `unlzw
+<https://mathematica.stackexchange.com/questions/60531/how-can-i-read-compressed-z-file-automatically-by-mathematica/60879#60879>`_
+library.
 
 * Free software: BSD 3-Clause License
 
@@ -77,28 +79,8 @@ Installation
 Documentation
 =============
 
-https://python-unlzw.readthedocs.io/
+.. code-block:: python
 
-Development
-===========
+    from unlzw import unlzw
 
-To run the all tests run::
-
-    tox
-
-Note, to combine the coverage data from all the tox environments run:
-
-.. list-table::
-    :widths: 10 90
-    :stub-columns: 1
-
-    - - Windows
-      - ::
-
-            set PYTEST_ADDOPTS=--cov-append
-            tox
-
-    - - Other
-      - ::
-
-            PYTEST_ADDOPTS=--cov-append tox
+    assert unlzw(b'\x1f\x9d\x90f\xde\xbc\x11\x13FN\xc0\x81\x05\x0f\x124(p\xa1\xc2\x82') == b'foobarfoobarfoobarfoobarfoobar'
