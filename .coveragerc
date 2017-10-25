@@ -1,0 +1,16 @@
+[paths]
+source =
+   src/unlzw
+   */site-packages/unlzw
+
+[run]
+branch = true
+source =
+    unlzw
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*
