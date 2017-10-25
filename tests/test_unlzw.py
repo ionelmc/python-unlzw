@@ -5,7 +5,7 @@ from unlzw import unlzw
 
 
 def test_decode():
-    assert unlzw(open(join(dirname(__file__), 'lipsum.txt.Z'), 'rb').read()) == '''
+    assert unlzw(open(join(dirname(__file__), 'lipsum.txt.Z'), 'rb').read()) == b'''
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at
 convallis neque. Mauris pharetra dui non tortor feugiat eleifend. Donec
 commodo congue nisl, ac accumsan elit eleifend in. Aliquam quis erat
