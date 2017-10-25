@@ -5,14 +5,14 @@ from ._unlzw import lib as _lib
 
 
 def unlzw(data):
-    out = _ffi.new('char*')
+    out = _ffi.new('unsigned char**')
     outlen = _ffi.new('size_t*')
     retcode = _lib.unlzw(
-        _ffi.new('char[]', data), len(data),
+        _ffi.new('unsigned char[]', data), len(data),
         out, outlen
     )
     if not retcode:
-        return _ffi.string(out, int(outlen))
+        return _ffi.string(out[0], outlen[0])
     elif retcode == 1:
         raise MemoryError("Failed to allocate memory.")
     elif retcode == -1:
