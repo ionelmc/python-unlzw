@@ -32,7 +32,7 @@ if 'TOXENV' in os.environ and 'SETUPPY_CFLAGS' in os.environ:
 
 setup(
     name='unlzw',
-    version='0.1.0',
+    version='0.1.1',
     license='BSD 3-Clause License',
     description="Bindings for Mark Adler's unlzw library.",
     long_description='%s\n%s' % (

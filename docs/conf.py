@@ -26,7 +26,7 @@ project = 'unlzw'
 year = '2017'
 author = 'Ionel Cristian Mărieș'
 copyright = '{0}, {1}'.format(year, author)
-version = release = '0.1.0'
+version = release = '0.1.1'
 
 pygments_style = 'trac'
 templates_path = ['.']
