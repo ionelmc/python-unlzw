@@ -1,4 +1,4 @@
-__version__ = '0.1.2'
+__version__ = '0.1.1'
 
 from ._unlzw import ffi as _ffi
 from ._unlzw import lib as _lib
