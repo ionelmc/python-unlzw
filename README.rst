@@ -44,9 +44,9 @@ Overview
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/unlzw
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/python-unlzw/v0.1.1.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/python-unlzw/v0.1.2.svg
     :alt: Commits since latest release
-    :target: https://github.com/ionelmc/python-unlzw/compare/v0.1.1...master
+    :target: https://github.com/ionelmc/python-unlzw/compare/v0.1.2...master
 
 .. |wheel| image:: https://img.shields.io/pypi/wheel/unlzw.svg
     :alt: PyPI Wheel

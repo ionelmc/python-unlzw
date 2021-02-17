@@ -6,6 +6,7 @@ from cffi import FFI
 ffi = FFI()
 ffi.cdef('''
     static int unlzw(unsigned const char *in, size_t inlen, unsigned char **out, size_t *outlen);
+    void free(void *ptr);
 ''')
 
 ffi.set_source(
