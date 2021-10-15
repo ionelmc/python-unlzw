@@ -1,18 +1,21 @@
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 from ._unlzw import ffi as _ffi
 from ._unlzw import lib as _lib
 
 
 def unlzw(data):
-    out = _ffi.new('unsigned char**')
+    tmp_out = _ffi.new('unsigned char**')
     outlen = _ffi.new('size_t*')
     retcode = _lib.unlzw(
         _ffi.new('unsigned char[]', data), len(data),
-        out, outlen
+        tmp_out, outlen
     )
     if not retcode:
-        return _ffi.string(out[0], outlen[0])
+        out = bytearray(outlen[0])
+        _ffi.memmove(out, tmp_out[0], outlen[0])
+        _lib.free(tmp_out[0])
+        return out
     elif retcode == 1:
         raise MemoryError("Failed to allocate memory.")
     elif retcode == -1:
