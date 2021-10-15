@@ -12,7 +12,8 @@ def unlzw(data):
         tmp_out, outlen
     )
     if not retcode:
-        out = _ffi.string(tmp_out[0], outlen[0])
+        out = bytearray(outlen[0])
+        _ffi.memmove(out, tmp_out[0], outlen[0])
         _lib.free(tmp_out[0])
         return out
     elif retcode == 1:
